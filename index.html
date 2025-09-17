@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>関西最難関中学受験のリアル：小学校選びと塾の役割</title>
+    <title>関西最難関中学受験のリアル：小学校選びから世界へ</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
@@ -22,7 +22,7 @@
         <!-- ヘッダー -->
         <header class="text-center mb-10">
             <h1 class="text-3xl md:text-4xl font-bold text-gray-800">関西最難関中学受験のリアル</h1>
-            <p class="text-lg text-gray-600 mt-2">小学校選びと「塾」の本当の関係性</p>
+            <p class="text-lg text-gray-600 mt-2">小学校選びから「塾」、そして世界の大学まで</p>
         </header>
 
         <!-- 結論ファースト -->
@@ -36,21 +36,11 @@
             </p>
         </div>
 
-        <!-- グラフセクション -->
-        <div class="grid md:grid-cols-2 gap-8 mb-10">
-            <!-- 貢献度グラフ -->
-            <div class="bg-white p-6 rounded-xl shadow-lg">
-                <h3 class="text-xl font-semibold text-center text-gray-700 mb-4">難関中合格への貢献度</h3>
-                <div class="relative h-64 md:h-72"><canvas id="contributionChart"></canvas></div>
-                <p class="text-sm text-gray-500 mt-3 text-center">※最難関中学の合格に必要な学力形成における、各要素の比重をイメージ化したものです。</p>
-            </div>
-
-            <!-- 費用比較グラフ -->
-            <div class="bg-white p-6 rounded-xl shadow-lg">
-                <h3 class="text-xl font-semibold text-center text-gray-700 mb-4">6年間の総費用比較（学費＋塾代最大）</h3>
-                <div class="relative h-64 md:h-72"><canvas id="costChart"></canvas></div>
-                 <p class="text-sm text-gray-500 mt-3 text-center">※各校の学費に塾代の最大投資額（約800万円）を加算して比較。</p>
-            </div>
+        <!-- 貢献度グラフ -->
+        <div class="bg-white p-6 rounded-xl shadow-lg mb-10">
+            <h3 class="text-xl font-semibold text-center text-gray-700 mb-4">難関中合格への貢献度</h3>
+            <div class="relative h-64 md:h-72 max-w-sm mx-auto"><canvas id="contributionChart"></canvas></div>
+            <p class="text-sm text-gray-500 mt-3 text-center">※最難関中学の合格に必要な学力形成における、各要素の比重をイメージ化したものです。</p>
         </div>
 
         <!-- 理由の深掘り -->
@@ -68,50 +58,30 @@
                     <h4 class="font-semibold text-lg text-gray-800">2. 合否を決めるのは塾の上位クラス</h4>
                     <p class="text-gray-700 ml-4 border-l-2 pl-4 mt-1">浜学園の「灘コース」、希学園の最難関コース、馬渕教室の「SSSクラス」など、<strong class="text-blue-600">大手塾の最上位クラスに6年生まで在籍し続けられるか</strong>が、ほぼ合否を左右します。</p>
                 </div>
-                <div>
-                    <h4 class="font-semibold text-lg text-gray-800">3. 公立は自由度が高い</h4>
-                    <p class="text-gray-700 ml-4 border-l-2 pl-4 mt-1">私立小の場合、内部進学という選択肢が学習計画に影響を与える可能性があります。その点、外部受験に専念できる公立小は、<strong class="text-blue-600">塾中心の学習スケジュールを組みやすい</strong>というメリットがあります。</p>
-                </div>
             </div>
         </div>
 
-        <!-- 費用感の詳細 -->
+        <!-- 学力レベル vs 費用 徹底比較 -->
         <div class="bg-white p-6 rounded-xl shadow-lg mb-10">
-            <h2 class="text-2xl font-bold text-gray-800 flex items-center mb-6">
-                 <i class="fas fa-yen-sign text-blue-500 mr-3"></i>
-                 💰 費用感の徹底比較（6年間合計）
+            <h2 class="text-2xl font-bold text-gray-800 flex items-center mb-6 justify-center">
+                <i class="fas fa-balance-scale-right text-blue-500 mr-3"></i>
+                📊 学力レベル vs 6年間総費用 徹底比較
             </h2>
-            <div class="overflow-x-auto">
-                <table class="w-full text-left">
-                    <thead>
-                        <tr class="bg-gray-100">
-                            <th class="p-3 font-semibold">ルート</th>
-                            <th class="p-3 font-semibold">学費</th>
-                            <th class="p-3 font-semibold">塾代</th>
-                            <th class="p-3 font-semibold text-blue-600">合計費用</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="border-b">
-                            <td class="p-3 font-bold">公立小＋塾（王道）</td>
-                            <td class="p-3">約30～50万円</td>
-                            <td class="p-3">約300～800万円</td>
-                            <td class="p-3 text-blue-600 font-bold">約350～850万円</td>
-                        </tr>
-                        <tr>
-                            <td class="p-3 font-bold">私立小＋塾（追手門など）</td>
-                            <td class="p-3">約500～600万円</td>
-                            <td class="p-3">約300～800万円</td>
-                            <td class="p-3 text-red-500 font-bold">約800～1,400万円</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold text-center text-gray-700 mb-4">卒業時の学力到達度スコア</h3>
+                    <div class="relative h-80"><canvas id="abilityChart"></canvas></div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-center text-gray-700 mb-4">6年間総費用（塾代最大）</h3>
+                    <div class="relative h-80"><canvas id="costChart"></canvas></div>
+                </div>
             </div>
-            <p class="text-md text-gray-700 mt-4 leading-relaxed">👉 実績面でも費用面でも、<strong class="marker">「公立＋塾」が合理的</strong>と考える家庭が多いのが実情です。</p>
+            <p class="text-md text-gray-700 mt-6 leading-relaxed text-center">👉 私立小学校は<strong class="marker">教育環境と学力レベルが高い一方、費用も相応に増加</strong>します。費用を抑えつつ高い学力を目指すには、<strong class="marker">「公立＋塾」が最も費用対効果の高い選択肢</strong>となります。</p>
         </div>
         
         <!-- 私立小学校の価値 -->
-        <div class="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-xl shadow-lg border-t-4 border-blue-400">
+        <div class="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-xl shadow-lg border-t-4 border-blue-400 mb-10">
             <h2 class="text-2xl font-bold text-gray-800 flex items-center mb-4">
                  <i class="fas fa-school text-blue-500 mr-3"></i>
                  では、追手門学院小学校で学ぶ価値とは？
@@ -124,96 +94,92 @@
                 <li><strong class="text-blue-700">特色ある教育：</strong> 公立にはないICT教育や探究学習で、知的好奇心を刺激。</li>
                 <li><strong class="text-blue-700">豊かな人間形成：</strong> 充実した学校行事や道徳教育を通じ、社会で活躍するための土台を築く。</li>
             </ul>
-             <p class="text-lg text-gray-800 mt-6 font-semibold text-center bg-blue-100 p-3 rounded-lg">
-                追手門学院の恵まれた環境を最大限に活かし、塾を戦略的に併用することで、<br class="hidden sm:block">「高い学力」と「豊かな人間性」の両方を育むことが可能です。
-            </p>
         </div>
 
+        <!-- NEW: 大学進学のその先 -->
+        <div class="bg-white p-6 rounded-xl shadow-lg">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-800 flex items-center mb-6 justify-center">
+                <i class="fas fa-globe-asia text-indigo-500 mr-3"></i>
+                大学進学のその先：東大から世界へ
+            </h2>
+            
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold text-gray-700 mb-4">■ 関西の主な高校の東大合格実績</h3>
+                 <div class="overflow-x-auto">
+                    <table class="w-full text-left">
+                        <thead class="bg-gray-100">
+                            <tr>
+                                <th class="p-3">高校名</th>
+                                <th class="p-3">最近の東大合格者数</th>
+                                <th class="p-3">補足</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b"><td class="p-3 font-bold">灘高等学校</td><td class="p-3">77人 (2025年)</td><td class="p-3 text-sm">卒業生約214人。現役合格率は約27.6%。</td></tr>
+                            <tr class="border-b"><td class="p-3 font-bold">西大和学園高等学校</td><td class="p-3">71人 (2024年)</td><td class="p-3 text-sm">共学私立。現役比率も非常に高い実績。</td></tr>
+                            <tr class="border-b"><td class="p-3 font-bold">洛南高等学校</td><td class="p-3">23人 (2025年)</td><td class="p-3 text-sm">京大合格者数が非常に多い関西トップ校。</td></tr>
+                            <tr class="border-b"><td class="p-3 font-bold">大阪星光学院高等学校</td><td class="p-3">10人 (2025年)</td><td class="p-3 text-sm">男子校。少数精鋭で高い水準を維持。</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="text-xl font-semibold text-gray-700 mb-4">■ 世界大学ランキングにおける東大・京大の位置</h3>
+                <p class="text-gray-700 mb-4">関西のトップ校から東大・京大に進学することは最高峰の目標の一つですが、グローバルな視点ではどのように評価されているのでしょうか。</p>
+                
+                <div class="bg-gray-50 p-4 rounded-lg mb-6">
+                    <h4 class="font-semibold text-lg text-gray-800 mb-2">⚡ 東京大学・京都大学と世界トップ校の「差」</h4>
+                    <ul class="list-disc list-inside space-y-2 text-gray-700">
+                        <li><strong class="text-indigo-600">研究資金・インフラの規模：</strong>ハーバードやMITなど米国のトップ校は、研究予算や寄付金の規模が圧倒的。</li>
+                        <li><strong class="text-indigo-600">国際性・多様性：</strong>英語論文数や、外国人教員・留学生の比率で差が見られる。</li>
+                        <li><strong class="text-indigo-600">論文のインパクト：</strong>トップジャーナルでの論文数や、世界中の研究者からの被引用率で海外上位校に軍配が上がる。</li>
+                    </ul>
+                </div>
+                <div class="bg-indigo-100 border-l-4 border-indigo-500 text-indigo-800 p-4 rounded-r-lg">
+                    <h4 class="font-bold">✅ 結論（世界での位置付け）</h4>
+                    <p>東京大学は<strong class="marker">世界トップ30位前後</strong>、京都大学は<strong class="marker">50位前後</strong>の評価。これは世界的に見て極めて高いレベルですが、ハーバード、MIT、オックスフォードといった常にトップ10にランクインする<strong class="text-red-600">「世界の頂点」</strong>の大学群とは、研究資金や国際性の面でまだ一段階差があるのが現状です。</p>
+                </div>
+            </div>
+        </div>
 
     </div>
 
     <script>
-        // 貢献度グラフ
-        const contributionCtx = document.getElementById('contributionChart').getContext('2d');
-        new Chart(contributionCtx, {
-            type: 'doughnut',
-            data: {
-                labels: ['大手進学塾', '小学校の授業', '家庭学習・その他'],
-                datasets: [{
-                    label: '貢献度',
-                    data: [80, 15, 5],
-                    backgroundColor: [
-                        'rgba(255, 99, 132, 0.8)',
-                        'rgba(54, 162, 235, 0.8)',
-                        'rgba(255, 206, 86, 0.8)'
-                    ],
-                    borderColor: '#fff',
-                    borderWidth: 2,
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    legend: {
-                        position: 'bottom',
-                    },
-                    tooltip: {
-                        callbacks: {
-                            label: function(context) {
-                                return context.label + ': ' + context.parsed + '%';
-                            }
-                        }
-                    }
-                }
-            }
-        });
-
-        // 費用比較グラフ
-        const costCtx = document.getElementById('costChart').getContext('2d');
-        new Chart(costCtx, {
-            type: 'bar',
-            data: {
-                labels: ['公立小＋塾', '大教大附属＋塾', '城星学園＋塾', '追手門学院＋塾'],
-                datasets: [{
-                    label: '6年間総費用 (万円)',
-                    data: [850, 850, 1250, 1280],
-                    backgroundColor: [
-                        'rgba(75, 192, 192, 0.7)',
-                        'rgba(54, 162, 235, 0.7)',
-                        'rgba(255, 99, 132, 0.7)',
-                        'rgba(153, 102, 255, 0.7)'
-                    ],
-                    borderColor: [
-                        'rgba(75, 192, 192, 1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(153, 102, 255, 1)'
-                    ],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                indexAxis: 'y',
-                responsive: true,
-                maintainAspectRatio: false,
-                scales: {
-                    x: {
-                        beginAtZero: true,
-                        ticks: {
-                            callback: function(value) {
-                                return value + '万円';
-                            }
-                        }
-                    }
+        window.onload = function() {
+            // 貢献度グラフ
+            const contributionCtx = document.getElementById('contributionChart').getContext('2d');
+            new Chart(contributionCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['大手進学塾', '小学校の授業', '家庭学習・その他'],
+                    datasets: [{ label: '貢献度', data: [80, 15, 5], backgroundColor: ['rgba(255, 99, 132, 0.8)', 'rgba(54, 162, 235, 0.8)', 'rgba(255, 206, 86, 0.8)'], borderColor: '#fff', borderWidth: 2 }]
                 },
-                plugins: {
-                    legend: {
-                        display: false
-                    }
-                }
-            }
-        });
+                options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' }, tooltip: { callbacks: { label: (c) => c.label + ': ' + c.parsed + '%' } } } }
+            });
+
+            // 学力到達度グラフ
+            const abilityCtx = document.getElementById('abilityChart').getContext('2d');
+            new Chart(abilityCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['城星学園', '大教大附属', '関西大学', '関西学院', '追手門', '公立'],
+                    datasets: [{ label: '学力到達度スコア', data: [10, 9, 8, 7, 7, 3], backgroundColor: ['rgba(255, 99, 132, 0.7)', 'rgba(54, 162, 235, 0.7)', 'rgba(255, 206, 86, 0.7)', 'rgba(75, 192, 192, 0.7)', 'rgba(153, 102, 255, 0.7)', 'rgba(255, 159, 64, 0.7)'] }]
+                },
+                options: { responsive: true, maintainAspectRatio: false, scales: { y: { beginAtZero: true, max: 10 } }, plugins: { legend: { display: false } } }
+            });
+
+            // 費用比較グラフ
+            const costCtx = document.getElementById('costChart').getContext('2d');
+            new Chart(costCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['公立＋塾', '大教大附属＋塾', '城星学園＋塾', '追手門学院＋塾'],
+                    datasets: [{ label: '6年間総費用 (万円)', data: [850, 850, 1250, 1280], backgroundColor: ['rgba(255, 159, 64, 0.7)', 'rgba(54, 162, 235, 0.7)', 'rgba(255, 99, 132, 0.7)', 'rgba(153, 102, 255, 0.7)'] }]
+                },
+                options: { responsive: true, maintainAspectRatio: false, scales: { y: { beginAtZero: true, ticks: { callback: (v) => v + '万円' } } }, plugins: { legend: { display: false }, tooltip: { callbacks: { label: (c) => c.dataset.label + ': ' + c.parsed.y + '万円' } } } }
+            });
+        };
     </script>
 </body>
 </html>
